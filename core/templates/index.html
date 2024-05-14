@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block titulo %}
+    
+{% endblock titulo %}
+
+{% block content %}
+    
+
+        <!-- Page Content-->
+        <div class="container px-4 px-lg-5">
+            <!-- Heading Row-->
+            <div class="row gx-4 gx-lg-5 align-items-center my-5">
+                <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="{% static 'img/belair.png' %}" alt="..." /></div>
+                <div class="col-lg-5">
+                    <h1 class="font-weight-light">MEET CAR</h1>
+                    <p>Bienvenido a MEET CAR, en este espacio se organizan eventos y reuniones entre los autos mas exclusivos de la Argentina. Deseo que tengas una hermosa estadia y que te unas a nuestra familia!</p>
+                    <a class="btn btn-primary" href="{% url 'registrar:index' %}" >Unete a esta familia!</a>
+                </div>
+            </div>
+            <!-- Call to Action-->
+            <div class="card text-white bg-secondary my-5 py-4 text-center">
+                <div class="card-body">
+                    <p class="text-white m-0" style="font-size: 20px;">Abajo te mostramos 3 de los mejores autos inscriptos en la anterior juntada, no te los pierdas esta ves!</p>
+                </div>
+            </div>
+    
+            <!-- Content Row-->
+            <div class="row gx-4 gx-lg-5">
+                <div class="col-md-4 mb-5">
+                    <div class="card h-100">
+                        <img src="{% static 'img/porsche.png' %}" alt="">
+                    </div>
+                </div>
+                <div class="col-md-4 mb-5">
+                    <div class="card h-100">
+                        <img src="{% static 'img/mercedes.png' %}" alt="">
+                    </div>
+                </div>
+                <div class="col-md-4 mb-5">
+                    <div class="card h-100">
+                        <img src="{% static 'img/ferrari.png' %}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+{% endblock content %}

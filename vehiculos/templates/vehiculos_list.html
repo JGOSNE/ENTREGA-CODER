@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+    LISTA / VEHÍCULOS
+{% endblock titulo %}
+
+{% block content %}
+
+        
+        <div class="row">
+            <div class="col-md-12 text-center mb-4">
+                <h1 class="display-4">LISTADO DE VEHÍCULOS</h1>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <form action="{% url 'vehiculos:listado' %}" method="get" class="mb-3">
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="busqueda" placeholder="Buscar...">
+                            <div class="input-group-append">
+                                <button type="submit" class="btn btn-primary">Buscar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <ul class="list-group">
+                    {% for vehiculo in vehiculos %}
+                        <li class="list-group-item">{{ vehiculo.marca }} {{ vehiculo.modelo }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

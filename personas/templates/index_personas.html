@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+    REGISTRAR
+{% endblock titulo %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Registrarse</h5>
+                        <p class="card-text">Haz clic en el siguiente botón para registrarte como persona.</p>
+                        <a href="{% url 'registrar:persona' %}" class="btn btn-primary">REGISTRARSE</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Registrar Vehículo</h5>
+                        <p class="card-text">Haz clic en el siguiente botón para registrar un vehículo.</p>
+                        <a href="{% url 'registrar:vehiculo' %}" class="btn btn-secondary">REGISTRAR VEHÍCULO</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+

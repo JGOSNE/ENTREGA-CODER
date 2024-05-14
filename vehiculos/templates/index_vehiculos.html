@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+    VEHÍCULOS
+{% endblock titulo %}
+
+{% block content %}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Bienvenido a la gestión de vehículos</h5>
+                        <p class="card-text">Aquí puedes acceder a la lista de vehículos registrados:</p>
+                        <a href="{% url 'vehiculos:listado' %}" class="btn btn-primary btn-lg btn-block">VER LISTA DE VEHÍCULOS</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
