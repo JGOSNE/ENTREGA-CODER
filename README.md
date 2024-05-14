@@ -1,6 +1,6 @@
 # MEETCAR
 
-Comision: ...
+Comision: python 54140
 
 Alumno: Joel Gosne
 
