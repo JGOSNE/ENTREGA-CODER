@@ -2,6 +2,8 @@ from django.shortcuts import render,redirect
 from vehiculos.models import vehiculos_list
 from vehiculos.forms import vehiculosForms
 from django.db.models import Q
+from django.views.generic import CreateView, ListView, DetailView, UpdateView, DetailView #CLASE 23 (VISTAS CON CLASES)
+from django.urls import reverse_lazy
 
 # Create your views here.
 
@@ -18,12 +20,9 @@ def vehiculos_mostrar(request):
     contexto = {"vehiculos" : consulta}
     return render(request, "vehiculos_list.html", contexto)
 
-def vehiculo_create(request):
-    if request.method == "POST":
-        form = vehiculosForms(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('registrar:index')
-    else:
-        form = vehiculosForms()
-    return render(request, "vehiculo_create.html", {"form" : form})
+
+class VehiculoCreate(CreateView):
+    model = vehiculos_list
+    form_class = vehiculosForms
+    success_url = reverse_lazy('vehiculos:listado')
+    template_name = "vehiculo_create.html"
