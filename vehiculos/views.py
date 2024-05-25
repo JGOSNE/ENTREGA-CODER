@@ -25,4 +25,4 @@ class VehiculoCreate(CreateView):
     model = vehiculos_list
     form_class = vehiculosForms
     success_url = reverse_lazy('vehiculos:listado')
-    template_name = "vehiculo_create.html"
+    template_name = "vehiculo_create.html" 

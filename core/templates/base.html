@@ -1,5 +1,4 @@
 {% load static %}
-
 <!DOCTYPE html>
 
 <html lang="es">
@@ -33,9 +32,18 @@
                 <!-- Lista de elementos de navegación -->
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="http://127.0.0.1:8000/">INICIO</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'registrar:index' %}">REGISTRARSE</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'vehiculos:index' %}">VEHICULOS</a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://wa.me/1151087131" target="_blank">CONTACTAME</a></li>
+                    {% if user.is_authenticated %}
+                        <li class="nav-item"><a class="nav-link" href="{% url 'registrar:index' %}">REGISTRARSE</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'vehiculos:index' %}">VEHICULOS</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://wa.me/1151087131" target="_blank">CONTACTAME</a></li>
+                        <form action="http://127.0.0.1:8000/logout/" method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="nav-link btn btn-link" style="padding: 0; border: none; margin-top: 8px;">CERRAR SESION</button>
+                        </form>
+                    {% else %}
+                        <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:8000/login/">INICIAR SESION</a></li>
+                        <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:8000/register/">REGISTRARSE</a></li>
+                    {% endif %}
                 </ul>
             </div>
         </div>

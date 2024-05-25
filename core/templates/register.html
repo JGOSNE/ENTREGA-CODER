@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+    REGISTER
+{% endblock titulo %}
+
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Registrarse</button>
+        <a href="http://127.0.0.1:8000/">Cancelar</a>
+    </form>
+{% endblock content %}
+
