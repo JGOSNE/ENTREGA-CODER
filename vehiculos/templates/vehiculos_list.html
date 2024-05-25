@@ -30,7 +30,10 @@
             <div class="col-md-6">
                 <ul class="list-group">
                     {% for vehiculo in vehiculos %}
-                        <li class="list-group-item">{{ vehiculo.marca }} {{ vehiculo.modelo }}</li>
+                        <li class="list-group-item">{{ vehiculo.marca }} {{ vehiculo.modelo }}
+                            <a href="{% url 'vehiculos:detail' vehiculo.id %}">Detalle</a>
+                            <a href="{% url 'vehiculos:borrar' vehiculo.id %}">Borrar</a>
+                        </li>
                     {% endfor %}
                 </ul>
             </div>

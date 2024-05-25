@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+    EVENTOS
+{% endblock titulo %}
+
+{% block content %}
+    <div class="container">
+        <h1 class="mt-5">EVENTOS</h1>
+
+        <div class="row mt-4">
+            {% for evento in eventos %}
+            <div class="col-md-6 mb-4">
+                <div class="card h-100 d-flex flex-column">
+                    <div class="card-body">
+                        <h5 class="card-title">EVENTO {{ forloop.counter }}</h5>
+                        <p class="card-text"><strong>Ubicación:</strong> {{ evento.ubicacion }}</p>
+                        <p class="card-text"><strong>Fecha:</strong> {{ evento.fecha }}</p>
+                        <p class="card-text"><strong>Cantidad de Entradas:</strong> {{ evento.cant_entradas }}</p>
+                        <p class="card-text"><strong>Autos:</strong></p>
+                        <ul class="list-unstyled">
+                            {% for auto in evento.autos.all %}
+                            <li>{{ auto }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock content %}

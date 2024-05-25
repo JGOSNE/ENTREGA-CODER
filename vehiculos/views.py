@@ -26,3 +26,17 @@ class VehiculoCreate(CreateView):
     form_class = vehiculosForms
     success_url = reverse_lazy('vehiculos:listado')
     template_name = "vehiculo_create.html" 
+
+def VehiculoDetail(request, pk:int):
+    consulta = vehiculos_list.objects.get(id=pk)
+    contexto = {"vehiculo" : consulta}
+    return render(request, "vehiculo_detail.html", contexto)
+
+def VehiculoDelete(request, pk:int):
+    consulta = vehiculos_list.objects.get(id=pk)
+    if request.method == "POST":
+        consulta.delete()
+        return redirect("vehiculos:listado")
+    return render(request, "vehiculos_confirm_delete.html", {"object" : consulta})
+
+    

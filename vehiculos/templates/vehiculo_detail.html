@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+    DETALLE
+{% endblock titulo %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mt-5">DETALLE</h1>
+
+    <ul class="list-group mt-3">
+        <li class="list-group-item"><strong>Marca:</strong> {{ vehiculo.marca }}</li>
+        <li class="list-group-item"><strong>Modelo:</strong> {{ vehiculo.modelo }}</li>
+        <li class="list-group-item"><strong>Propietario:</strong> {{ vehiculo.propietario }}</li>
+    </ul>
+    <div class="mt-3">
+        <a href="http://127.0.0.1:8000/vehiculos/vehiculos_list/" class="btn btn-primary">Volver</a>
+    </div>
+</div>
+{% endblock content %}

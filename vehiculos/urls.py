@@ -1,13 +1,13 @@
 from django.urls import path
-from . import views
+from vehiculos.views import index, vehiculos_mostrar, VehiculoDetail, VehiculoDelete
 
 app_name = "vehiculos"
 
 urlpatterns = [
-    path("", views.index, name="index"),
-    path("vehiculos_list/", views.vehiculos_mostrar, name="listado"),
+    path("", index, name="index"),
+    path("vehiculos_list/", vehiculos_mostrar, name="listado"),
+    path("vehiculos_Detail/<int:pk>", VehiculoDetail, name="detail"),
+    path("vehiculos_delete/<int:pk>", VehiculoDelete, name="borrar"),
     
 ]
 
-#35 min
-# 2h 5m
