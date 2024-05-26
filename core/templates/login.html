@@ -8,7 +8,7 @@
     <form method="post">
         {% csrf_token %}
         {{ form }}
-        <input type="hidden" name="next" value="{% url 'registrar:index' %}">
+        <input type="hidden" name="next" value="http://127.0.0.1:8000/">
         <button type="submit">Iniciar Sesion</button>
         <a href="http://127.0.0.1:8000/">Cancelar</a>
     </form>
