@@ -28,7 +28,7 @@ def vehiculos_mostrar(request):
 class VehiculoCreate(LoginRequiredMixin, CreateView):
     model = vehiculos_list
     form_class = vehiculosForms
-    success_url = reverse_lazy('vehiculos:listado')
+    success_url = reverse_lazy('registrar:index')
     template_name = "vehiculo_create.html"
     login_url = '/login/'
 

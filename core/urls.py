@@ -1,7 +1,7 @@
 from django.urls import path, include
 from core.views import index, CustomLoginView, register
 from django.contrib.auth.views import LogoutView
-
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 app_name = ""
 
 urlpatterns = [
@@ -13,5 +13,6 @@ urlpatterns = [
     path("register/", register, name="register"),
     path("eventos/", include("eventos.urls")),
     
-    
 ]
+
+urlpatterns += staticfiles_urlpatterns()
